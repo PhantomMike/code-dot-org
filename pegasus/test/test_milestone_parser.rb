@@ -1,10 +1,10 @@
 require 'minitest/autorun'
 require_relative '../../deployment'
-require_relative '../../lib/cdo/aws/s3'
 require_relative '../../lib/cdo/analytics/milestone_parser'
-require 'fileutils'
 
 class MilestoneParser
+  # self.log_debug = true # Uncomment to show debug logs
+
   def stub_fetch(key, path, bytes)
     TestMilestoneParser.instance.fetch(key, path, bytes)
   end
