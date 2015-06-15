@@ -217,6 +217,19 @@ class ActivitiesController < ApplicationController
     end
   end
 
+  MILESTONE_FIELDS = %w(
+    id
+    ip
+    app
+    level
+    result
+    test_result
+    time
+    attempt
+    lines
+    level_source
+    user_agent
+  )
   def log_milestone(level_source, params)
     log_string = 'Milestone Report:'
     if current_user || session.id
