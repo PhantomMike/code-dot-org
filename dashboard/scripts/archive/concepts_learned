@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+# Concepts learned approximation
+
+# Concepts learned (broken down by male/female (if reported) and all)
+
+# For each course (course 1-4, K8, HOC of courses):
+# Finished 100% of puzzles in the course
+# Finished 90% of puzzles in the course
+# Finished 80% of the puzzles in the course
+# …
+# Finished 10% of the puzzles
+# Started the course
+
+# And also by stage or HOC class (specific concepts)
+# Stage 1:
+# Number of students who had optimal solutions to all puzzles
+# Number of students who finished all puzzles
+# Number of students who finished 80%
+# Stage 2:
+# etc.
+# etc.
+require_relative '../../config/environment'
+
+script_data = Script.all.map do |script|
+  {
+    script_id: script.id,
+    stages: script.stages.map do |stage|
+      # calculate number of script levels in stage completed per-user
+      script_levels = stage.script_levels
+      UserLevel.joins(:level).where('level.id' => script_levels.map(&:level_id)).group_by(&:user).each do |user, user_levels|
+
+      end
+      {
+        stage_id: stage.id,
+        script_levels: script_levels.map do |sl|
+          {
+            script_level_id: sl.id,
+            passed: UserLevel.where('level_id = ? AND best_result >= ?', sl.level_id, Activity::MINIMUM_PASS_RESULT).count,
+            ideal_passed: UserLevel.where('level_id = ? AND best_result > ?', sl.level_id, Activity::MAXIMUM_NONOPTIMAL_RESULT).count,
+            attempted: UserLevel.where('level_id = ?', sl.level_id).count
+          }
+        end
+      }
+    end,
+    completed: UserScript.where.not(completed_at: nil).count
+  }
+end
+puts script_data
+script_data.each do |s|
+  puts s.inspect
+end

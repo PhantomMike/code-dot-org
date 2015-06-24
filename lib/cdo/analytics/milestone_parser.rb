@@ -12,7 +12,7 @@ require 'parallel'
 require 'fileutils'
 
 class MilestoneParser
-  # Ignore milestone logs in these host paths
+  # Ignore milestone logs in these host paths (these are non-production nodes)
   IGNORE_HOSTS = %w(console daemon production-daemon staging test levelbuilder-staging levelbuilder-development development react)
 
   MILESTONE_CACHE = pegasus_dir('cache', 'milestone-cache.json')
