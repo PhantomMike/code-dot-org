@@ -28,11 +28,27 @@ script_data = Script.all.map do |script|
     stages: script.stages.map do |stage|
       # calculate number of script levels in stage completed per-user
       script_levels = stage.script_levels
-      UserLevel.joins(:level).where('level.id' => script_levels.map(&:level_id)).group_by(&:user).each do |user, user_levels|
+      passed_bucket = Hash.new(0)
+      ideal_passed_bucket = Hash.new(0)
 
-      end
+      UserLevel.joins(:level).where('levels.id' => script_levels.map(&:level_id))
+        .where('user_levels.updated_at > ?', DateTime.now - 30.days)
+        .where('best_result > ?', Activity::MINIMUM_PASS_RESULT)
+        .group_by(&:user)
+        .each{|_,user_levels| passed_bucket[user_levels.count] += 1}
+
+      UserLevel.joins(:level).where('levels.id' => script_levels.map(&:level_id))
+        .where('user_levels.updated_at > ?', DateTime.now - 30.days)
+        .where('best_result > ?', Activity::MAXIMUM_NONOPTIMAL_RESULT)
+        .group_by(&:user)
+        .each{|_,user_levels| ideal_passed_bucket[user_levels.count] += 1}
+
       {
         stage_id: stage.id,
+        buckets: {
+          passed: passed_bucket,
+          ideal_passed: ideal_passed_bucket
+        },
         script_levels: script_levels.map do |sl|
           {
             script_level_id: sl.id,
@@ -46,7 +62,4 @@ script_data = Script.all.map do |script|
     completed: UserScript.where.not(completed_at: nil).count
   }
 end
-puts script_data
-script_data.each do |s|
-  puts s.inspect
-end
+puts script_data.to_json
