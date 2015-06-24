@@ -21,45 +21,9 @@
 # etc.
 # etc.
 require_relative '../../config/environment'
-
+connection = ActiveRecord::Base.connection
 script_data = Script.all.map do |script|
-  {
-    script_id: script.id,
-    stages: script.stages.map do |stage|
-      # calculate number of script levels in stage completed per-user
-      script_levels = stage.script_levels
-      passed_bucket = Hash.new(0)
-      ideal_passed_bucket = Hash.new(0)
-
-      UserLevel.joins(:level).where('levels.id' => script_levels.map(&:level_id))
-        .where('user_levels.updated_at > ?', DateTime.now - 30.days)
-        .where('best_result > ?', Activity::MINIMUM_PASS_RESULT)
-        .group_by(&:user)
-        .each{|_,user_levels| passed_bucket[user_levels.count] += 1}
-
-      UserLevel.joins(:level).where('levels.id' => script_levels.map(&:level_id))
-        .where('user_levels.updated_at > ?', DateTime.now - 30.days)
-        .where('best_result > ?', Activity::MAXIMUM_NONOPTIMAL_RESULT)
-        .group_by(&:user)
-        .each{|_,user_levels| ideal_passed_bucket[user_levels.count] += 1}
-
-      {
-        stage_id: stage.id,
-        buckets: {
-          passed: passed_bucket,
-          ideal_passed: ideal_passed_bucket
-        },
-        script_levels: script_levels.map do |sl|
-          {
-            script_level_id: sl.id,
-            passed: UserLevel.where('level_id = ? AND best_result >= ?', sl.level_id, Activity::MINIMUM_PASS_RESULT).count,
-            ideal_passed: UserLevel.where('level_id = ? AND best_result > ?', sl.level_id, Activity::MAXIMUM_NONOPTIMAL_RESULT).count,
-            attempted: UserLevel.where('level_id = ?', sl.level_id).count
-          }
-        end
-      }
-    end,
-    completed: UserScript.where.not(completed_at: nil).count
-  }
+  sql = "select query, count(*) from (SELECT count(*) as query from user_levels where script_id = #{script.id} group by user_id) as derived_table group by query"
+  {id: script.id, data: connection.execute(sql)}.to_json.tap{|x|puts x}
 end
 puts script_data.to_json
