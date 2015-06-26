@@ -346,7 +346,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "showBlocksHeader":function(d){return "Покажи блоковете"},
 "showCodeHeader":function(d){return "Покажи кода"},
 "showGeneratedCode":function(d){return "Покажи кода"},
-"showTextHeader":function(d){return "Show Text"},
+"showTextHeader":function(d){return "Показване на текст"},
 "showToolbox":function(d){return "Показване на инструменти"},
 "signup":function(d){return "Регистрация във встъпителния курс"},
 "stringEquals":function(d){return "низ =?"},
@@ -365,4 +365,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "watchVideo":function(d){return "Гледайте видеото"},
 "when":function(d){return "когато"},
 "whenRun":function(d){return "при стартиране"},
-"workspaceHeaderShort":function(d){return "Работна област: "}};
+"workspaceHeaderShort":function(d){return "Работна област: "},
+"emptyBlockInFunction":function(d){return "The function "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyBlockInVariable":function(d){return "The variable "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyTopLevelBlock":function(d){return "There are no blocks to run. You must attach a block to the "+common_locale.v(d,"topLevelBlockName")+" block."}};

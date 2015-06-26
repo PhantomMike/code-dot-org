@@ -14,7 +14,7 @@
   "catProcedures": "कार्य",
   "catText": "पाठ",
   "catVariables": "चर",
-  "clearPuzzle": "Clear Puzzle",
+  "clearPuzzle": "पुन: प्रारंभ करें",
   "clearPuzzleConfirm": "This will delete all blocks and reset the puzzle to its start state.",
   "clearPuzzleConfirmHeader": "Are you sure you want to clear the puzzle?",
   "codeMode": "Code",
@@ -210,5 +210,8 @@
   "watchVideo": "ये वीडियो देखें",
   "when": "कब",
   "whenRun": "जब चलाएँ",
-  "workspaceHeaderShort": "Workspace: "
+  "workspaceHeaderShort": "Workspace: ",
+  "emptyBlockInFunction": "The function {name} has an unfilled input.",
+  "emptyBlockInVariable": "The variable {name} has an unfilled input.",
+  "emptyTopLevelBlock": "There are no blocks to run. You must attach a block to the {topLevelBlockName} block."
 }

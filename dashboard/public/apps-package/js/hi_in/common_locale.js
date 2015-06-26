@@ -169,7 +169,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "catProcedures":function(d){return "कार्य"},
 "catText":function(d){return "पाठ"},
 "catVariables":function(d){return "चर"},
-"clearPuzzle":function(d){return "Clear Puzzle"},
+"clearPuzzle":function(d){return "पुन: प्रारंभ करें"},
 "clearPuzzleConfirm":function(d){return "This will delete all blocks and reset the puzzle to its start state."},
 "clearPuzzleConfirmHeader":function(d){return "Are you sure you want to clear the puzzle?"},
 "codeMode":function(d){return "Code"},
@@ -365,4 +365,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "watchVideo":function(d){return "ये वीडियो देखें"},
 "when":function(d){return "कब"},
 "whenRun":function(d){return "जब चलाएँ"},
-"workspaceHeaderShort":function(d){return "Workspace: "}};
+"workspaceHeaderShort":function(d){return "Workspace: "},
+"emptyBlockInFunction":function(d){return "The function "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyBlockInVariable":function(d){return "The variable "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyTopLevelBlock":function(d){return "There are no blocks to run. You must attach a block to the "+common_locale.v(d,"topLevelBlockName")+" block."}};

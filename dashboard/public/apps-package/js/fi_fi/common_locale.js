@@ -176,7 +176,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "codeTooltip":function(d){return "Näytä tuotettu JavaScript-koodi."},
 "continue":function(d){return "Jatka"},
 "defaultTwitterText":function(d){return "Katso mitä tein"},
-"designMode":function(d){return "Design"},
+"designMode":function(d){return "Tyyli"},
 "dialogCancel":function(d){return "Peru"},
 "dialogOK":function(d){return "OK"},
 "directionEastLetter":function(d){return "I"},
@@ -346,7 +346,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "showBlocksHeader":function(d){return "Näytä lohkot"},
 "showCodeHeader":function(d){return "Näytä koodi"},
 "showGeneratedCode":function(d){return "Näytä koodi"},
-"showTextHeader":function(d){return "Show Text"},
+"showTextHeader":function(d){return "Näytä teksti"},
 "showToolbox":function(d){return "Näytä työkalupakki"},
 "signup":function(d){return "Rekisteröidy johdantokurssille"},
 "stringEquals":function(d){return "merkkijono=?"},
@@ -365,4 +365,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "watchVideo":function(d){return "Katso video"},
 "when":function(d){return "kun"},
 "whenRun":function(d){return "suoritettaessa"},
-"workspaceHeaderShort":function(d){return "Työtila: "}};
+"workspaceHeaderShort":function(d){return "Työtila: "},
+"emptyBlockInFunction":function(d){return "The function "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyBlockInVariable":function(d){return "The variable "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyTopLevelBlock":function(d){return "There are no blocks to run. You must attach a block to the "+common_locale.v(d,"topLevelBlockName")+" block."}};

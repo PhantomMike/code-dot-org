@@ -191,7 +191,7 @@
   "showBlocksHeader": "Mostra i blocchi",
   "showCodeHeader": "Mostra il codice",
   "showGeneratedCode": "Mostra il codice",
-  "showTextHeader": "Show Text",
+  "showTextHeader": "Visualizza testo",
   "showToolbox": "Visualizza strumenti",
   "signup": "Iscriviti al corso introduttivo",
   "stringEquals": "stringa = ?",
@@ -210,5 +210,8 @@
   "watchVideo": "Guarda il video",
   "when": "quando",
   "whenRun": "quando si clicca su \"Esegui\"",
-  "workspaceHeaderShort": "Area di lavoro: "
+  "workspaceHeaderShort": "Area di lavoro: ",
+  "emptyBlockInFunction": "The function {name} has an unfilled input.",
+  "emptyBlockInVariable": "The variable {name} has an unfilled input.",
+  "emptyTopLevelBlock": "There are no blocks to run. You must attach a block to the {topLevelBlockName} block."
 }

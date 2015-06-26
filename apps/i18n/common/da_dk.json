@@ -191,7 +191,7 @@
   "showBlocksHeader": "Vis blokke",
   "showCodeHeader": "Vis kode",
   "showGeneratedCode": "Vis kode",
-  "showTextHeader": "Show Text",
+  "showTextHeader": "Vis tekst",
   "showToolbox": "Vis værktøjskasse",
   "signup": "Tilmeld til Introduktion kursus",
   "stringEquals": "streng =?",
@@ -210,5 +210,8 @@
   "watchVideo": "Se videoen",
   "when": "når",
   "whenRun": "når programmet kører",
-  "workspaceHeaderShort": "Arbejdsområde: "
+  "workspaceHeaderShort": "Arbejdsområde: ",
+  "emptyBlockInFunction": "The function {name} has an unfilled input.",
+  "emptyBlockInVariable": "The variable {name} has an unfilled input.",
+  "emptyTopLevelBlock": "There are no blocks to run. You must attach a block to the {topLevelBlockName} block."
 }

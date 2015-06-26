@@ -346,7 +346,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "showBlocksHeader":function(d){return "Tampilkan blok-blok"},
 "showCodeHeader":function(d){return "Tampilkan kode"},
 "showGeneratedCode":function(d){return "Tampilkan kode"},
-"showTextHeader":function(d){return "Show Text"},
+"showTextHeader":function(d){return "Tampilkan teks"},
 "showToolbox":function(d){return "Tampilkan Toolbox"},
 "signup":function(d){return "Daftarlah untuk mengikuti kursus introduksi"},
 "stringEquals":function(d){return "string=?"},
@@ -365,4 +365,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "watchVideo":function(d){return "Tonton Videonya"},
 "when":function(d){return "ketika"},
 "whenRun":function(d){return "ketika dijalankan"},
-"workspaceHeaderShort":function(d){return "Area kerja: "}};
+"workspaceHeaderShort":function(d){return "Area kerja: "},
+"emptyBlockInFunction":function(d){return "The function "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyBlockInVariable":function(d){return "The variable "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyTopLevelBlock":function(d){return "There are no blocks to run. You must attach a block to the "+common_locale.v(d,"topLevelBlockName")+" block."}};

@@ -191,7 +191,7 @@
   "showBlocksHeader": "Tampilkan blok-blok",
   "showCodeHeader": "Tampilkan kode",
   "showGeneratedCode": "Tampilkan kode",
-  "showTextHeader": "Show Text",
+  "showTextHeader": "Tampilkan teks",
   "showToolbox": "Tampilkan Toolbox",
   "signup": "Daftarlah untuk mengikuti kursus introduksi",
   "stringEquals": "string=?",
@@ -210,5 +210,8 @@
   "watchVideo": "Tonton Videonya",
   "when": "ketika",
   "whenRun": "ketika dijalankan",
-  "workspaceHeaderShort": "Area kerja: "
+  "workspaceHeaderShort": "Area kerja: ",
+  "emptyBlockInFunction": "The function {name} has an unfilled input.",
+  "emptyBlockInVariable": "The variable {name} has an unfilled input.",
+  "emptyTopLevelBlock": "There are no blocks to run. You must attach a block to the {topLevelBlockName} block."
 }

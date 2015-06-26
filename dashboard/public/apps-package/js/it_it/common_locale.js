@@ -346,7 +346,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "showBlocksHeader":function(d){return "Mostra i blocchi"},
 "showCodeHeader":function(d){return "Mostra il codice"},
 "showGeneratedCode":function(d){return "Mostra il codice"},
-"showTextHeader":function(d){return "Show Text"},
+"showTextHeader":function(d){return "Visualizza testo"},
 "showToolbox":function(d){return "Visualizza strumenti"},
 "signup":function(d){return "Iscriviti al corso introduttivo"},
 "stringEquals":function(d){return "stringa = ?"},
@@ -365,4 +365,7 @@ s:function(d,k,p){common_locale.c(d,k);return d[k] in p?p[d[k]]:p.other}};
 "watchVideo":function(d){return "Guarda il video"},
 "when":function(d){return "quando"},
 "whenRun":function(d){return "quando si clicca su \"Esegui\""},
-"workspaceHeaderShort":function(d){return "Area di lavoro: "}};
+"workspaceHeaderShort":function(d){return "Area di lavoro: "},
+"emptyBlockInFunction":function(d){return "The function "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyBlockInVariable":function(d){return "The variable "+common_locale.v(d,"name")+" has an unfilled input."},
+"emptyTopLevelBlock":function(d){return "There are no blocks to run. You must attach a block to the "+common_locale.v(d,"topLevelBlockName")+" block."}};
