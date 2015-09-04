@@ -18,7 +18,7 @@
     }
   }
 
-  input[type=text], input:not([type]), div[contenteditable=true] {
+  input[type=text], input:not([type]), div[contenteditable=true], div[chart=true] {
     border: 1px solid #999;
     padding: 10px;
   }
@@ -48,9 +48,9 @@
 
 #divApplab.appModern.divApplabDesignMode, .draggingParent {
 
-  img[src=''], canvas {
+  img[src=''], canvas, div[chart=true] {
     border: 5px solid #fff;
-    outline: 1px solid #bdc3c7;
+    outline: 1px solid #bdc3c7; 
     outline-offset: -1px;
   }
 
@@ -60,5 +60,9 @@
 
   canvas {
     background: #bdc3c7 url("/blockly/media/applab/placeholder_canvas.png") center center no-repeat;
+  }
+
+  div[chart=true] {
+    background: #bdc3c7 url("/blockly/media/applab/placeholder_chart.png") center center no-repeat;
   }
 }
