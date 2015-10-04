@@ -4,7 +4,6 @@ var React = require('react');
 
 var PropertyRow = require('./PropertyRow.jsx');
 var BooleanPropertyRow = require('./BooleanPropertyRow.jsx');
-var ColorPickerPropertyRow = require('./ColorPickerPropertyRow.jsx');
 var ZOrderRow = require('./ZOrderRow.jsx');
 var EventHeaderRow = require('./EventHeaderRow.jsx');
 var EventRow = require('./EventRow.jsx');
@@ -48,26 +47,26 @@ var SliderProperties = React.createClass({
           isNumber={true}
           initialValue={parseInt(element.style.top, 10)}
           handleChange={this.props.handleChange.bind(this, 'top')} />
-	<PropertyRow
-	  desc={'value'}
-	  isNumber={true}
-	  initialValue={parseInt(element.value, 10)}
-	  handleChange={this.props.handleChange.bind(this, 'value')} />
-	<PropertyRow
-	  desc={'minimum value'}
-	  isNumber={true}
-	  initialValue={parseInt(element.min, 10)}
-	  handleChange={this.props.handleChange.bind(this, 'min')} />
-	<PropertyRow
-	  desc={'maximum value'}
-	  isNumber={true}
-	  initialValue={parseInt(element.max, 10)}
-	  handleChange={this.props.handleChange.bind(this, 'max')} />
-	<PropertyRow
-	  desc={'step size'}
-	  isNumber={true}
-	  initialValue={parseInt(element.step, 10)}
-	  handleChange={this.props.handleChange.bind(this, 'step')} />
+        <PropertyRow
+          desc={'value'}
+          isNumber={true}
+          initialValue={parseInt(element.value, 10)}
+          handleChange={this.props.handleChange.bind(this, 'value')} />
+        <PropertyRow
+          desc={'minimum value'}
+          isNumber={true}
+          initialValue={parseInt(element.min, 10)}
+          handleChange={this.props.handleChange.bind(this, 'min')} />
+        <PropertyRow
+          desc={'maximum value'}
+          isNumber={true}
+          initialValue={parseInt(element.max, 10)}
+          handleChange={this.props.handleChange.bind(this, 'max')} />
+        <PropertyRow
+          desc={'step size'}
+          isNumber={true}
+          initialValue={parseInt(element.step, 10)}
+          handleChange={this.props.handleChange.bind(this, 'step')} />
         <BooleanPropertyRow
           desc={'hidden'}
           initialValue={$(element).hasClass('design-mode-hidden')}

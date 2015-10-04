@@ -140,8 +140,8 @@ module.exports = {
             return ElementType.CHECKBOX;
           case 'radio':
             return ElementType.RADIO_BUTTON;
-	  case 'range':
-	    return ElementType.SLIDER;
+          case 'range':
+            return ElementType.SLIDER;
           default:
             return ElementType.TEXT_INPUT;
         }
