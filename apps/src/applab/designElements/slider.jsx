@@ -50,8 +50,8 @@ var SliderProperties = React.createClass({
         <PropertyRow
           desc={'value'}
           isNumber={true}
-          initialValue={parseInt(element.value, 10)}
-          handleChange={this.props.handleChange.bind(this, 'value')} />
+          initialValue={element.defaultValue}
+          handleChange={this.props.handleChange.bind(this, 'defaultValue')} />
         <PropertyRow
           desc={'minimum value'}
           isNumber={true}
@@ -129,13 +129,24 @@ module.exports = {
     var element = document.createElement('input');
     element.type = 'range';
     element.style.margin = '0px';
-    element.style.width = '200px';
-    element.style.height = '30px';
-    element.value = "50";
+    element.style.width = '150px';
+    element.style.height = '24px';
+    element.defaultValue = 50;
     element.min = 0;
     element.max = 100;
-    element.size = 1;
+    element.step = 1;
 
     return element;
+  },
+
+  onPropertyChange: function (element, name, value) {
+    switch (name) {
+      case 'defaultValue':
+        element.defaultValue = value;
+        break;
+      default:
+        return false;
+    }
+    return true;
   }
 };
