@@ -77,6 +77,11 @@ module.exports = React.createClass({
             desc={'Text Area'}
             elementType={'TEXT_AREA'}
             handleDragStart={this.props.handleDragStart} />
+	 <DesignToolboxElement
+            imageUrl={IMAGE_BASE_URL + 'slider.png'}
+            desc={'Slider'}
+            elementType={'SLIDER'}
+            handleDragStart={this.props.handleDragStart} />
       </div>
     );
   }
