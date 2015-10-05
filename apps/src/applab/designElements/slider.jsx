@@ -144,6 +144,15 @@ module.exports = {
       case 'defaultValue':
         element.defaultValue = value;
         break;
+      case 'min':
+        element.min = value;
+        break;
+      case 'max':
+        element.max = value;
+        break;
+      case 'step':
+        element.step = value;
+        break;
       default:
         return false;
     }
