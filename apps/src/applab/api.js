@@ -248,6 +248,12 @@ exports.setText = function (elementId, text) {
                            'text': text });
 };
 
+exports.getValue = function (elementId) {
+  return Applab.executeCmd(null,
+                          'getValue',
+                          {'elementId': elementId });
+};
+
 exports.getImageURL = function (elementId) {
   return Applab.executeCmd(null,
                           'getImageURL',

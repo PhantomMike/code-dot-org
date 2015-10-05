@@ -145,6 +145,16 @@ function apiValidateDomIdExistence(opts, funcName, varName, id, shouldExist) {
   }
 }
 
+function apiValidateElementIdTagAndType(funcName, id, tagName, type, friendlyName) {
+  var element = document.getElementById(id);
+  if (!(divApplab.contains(element)) ||
+      !((element.tagName === tagName) && (element.type === type))) {
+      var line = 1 + Applab.JSInterpreter.getNearestUserCodeLine();
+      var errorString = funcName + "() id must refer to a " + friendlyName + " element.";
+      outputError(errorString, ErrorLevel.WARNING, line);
+  }
+}
+
 // (brent) We may in the future also provide a second option that allows you to
 // reset the state of the screen to it's original (design mode) state.
 applabCommands.setScreen = function (opts) {
@@ -816,6 +826,12 @@ applabCommands.setText = function (opts) {
   }
   return false;
 };
+
+applabCommands.getValue = function (opts) {
+  apiValidateDomIdExistence(opts, 'getValue', 'id', opts.elementId, true);
+  apiValidateElementIdTagAndType('getValue', opts.elementId, 'INPUT', 'range', 'slider');
+  return applabCommands.getText(opts);
+}
 
 applabCommands.getChecked = function (opts) {
   var divApplab = document.getElementById('divApplab');

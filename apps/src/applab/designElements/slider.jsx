@@ -89,7 +89,7 @@ var SliderEvents = React.createClass({
     var id = this.props.element.id;
     var code =
       'onEvent("' + id + '", "input", function(event) {\n' +
-      '  console.log("' + id + ' value: " + getText("' + id + '"));\n' +
+      '  console.log("' + id + ' value: " + getValue("' + id + '"));\n' +
       '});\n';
     return code;
   },
