@@ -830,8 +830,14 @@ applabCommands.setText = function (opts) {
 applabCommands.getValue = function (opts) {
   apiValidateDomIdExistence(opts, 'getValue', 'id', opts.elementId, true);
   apiValidateElementIdTagAndType('getValue', opts.elementId, 'INPUT', 'range', 'slider');
-  return applabCommands.getText(opts);
+  return parseInt(applabCommands.getText(opts), 10);
 }
+
+applabCommands.setValue = function (opts) {
+  apiValidateDomIdExistence(opts, 'setValue', 'id', opts.elementId, true);
+  apiValidateElementIdTagAndType('setValue', opts.elementId, 'INPUT', 'range', 'slider');
+  return applabCommands.setText(opts);
+};
 
 applabCommands.getChecked = function (opts) {
   var divApplab = document.getElementById('divApplab');

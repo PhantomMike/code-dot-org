@@ -260,6 +260,13 @@ exports.getValue = function (blockId, elementId) {
                           {'elementId': elementId });
 };
 
+exports.setValue = function (blockId, elementId, text) {
+  return Applab.executeCmd(blockId,
+                          'setValue',
+                          {'elementId': elementId,
+                           'text': text });
+};
+
 exports.getImageURL = function (blockId, elementId) {
   return Applab.executeCmd(blockId,
                           'getImageURL',
