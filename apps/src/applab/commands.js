@@ -836,6 +836,7 @@ applabCommands.getValue = function (opts) {
 applabCommands.setValue = function (opts) {
   apiValidateDomIdExistence(opts, 'setValue', 'id', opts.elementId, true);
   apiValidateElementIdTagAndType('setValue', opts.elementId, 'INPUT', 'range', 'slider');
+  apiValidateType(opts, 'setValue', 'value', opts.text, 'number');
   return applabCommands.setText(opts);
 };
 
