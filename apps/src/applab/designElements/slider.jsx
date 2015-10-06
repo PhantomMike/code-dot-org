@@ -129,6 +129,7 @@ module.exports = {
     var element = document.createElement('input');
     element.type = 'range';
     element.style.margin = '0px';
+    element.style.padding = '0px';
     element.style.width = '150px';
     element.style.height = '24px';
     element.defaultValue = 50;
